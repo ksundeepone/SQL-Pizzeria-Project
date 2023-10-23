@@ -14,7 +14,10 @@ add_id int ,
 delivery boolean
 );
 
-00000
+0
+there is the change 
+
+
 CREATE TABLE customer (
 cust_id int PRIMARY KEY,
 cust_firstname varchar(50),
