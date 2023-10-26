@@ -78,7 +78,7 @@ CREATE TABLE `inventory` (
 
 
 
-##INSERTIONS 
+#-------------------------------INSERTIONS--------------------------------------------------------------------- 
 
 
 INSERT INTO orders (`row_id`, `order_id`, `created_at`, `item_id`, `quantity`, `cust_id`, `add_id`, `delivery`)
@@ -177,6 +177,45 @@ VALUES
 (8, 25, 'ITEM008'),
 (9, 70, 'ITEM009'),
 (10, 90, 'ITEM010');
+
+
+
+#-------------------------------SELECT queries --------------------------------------------------------------------- 
+
+select * from orders ;
+select * from customer ;
+select * from address ;
+select * from item ;
+select * from ingredient ;
+select * from reccipe ;
+select * from inventory ;
+
+
+
+#-------------------------------SELECT queries ---------------------------------------------------------------------
+
+SELECT c.cust_firstname as firstname,
+a.delivery_zipcode, 
+o.item_id 
+from customer as c 
+join orders as o on c.cust_id = o.cust_id
+join address as a on  o.add_id = a.add_id
+;
+
+
+select c.cust_firstname, 
+o.delivery,o.order_id,
+i.item_price, i.item_name
+from customer as c 
+join orders as o on c.cust_id = o.cust_id 
+join item as i on o.item_id = i.item_id;
+
+
+
+
+
+
+
 
 
 
